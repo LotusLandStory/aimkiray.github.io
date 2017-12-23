@@ -56,19 +56,19 @@ PHP 只需将源代码上传至服务器即可完成热更新，超方便；而 
 </ol><p>发现已经有不少人写过啦，那我就偷下懒，附上链接：</p><p><a href="http://www.techug.com/post/compare-php-and-java-in-web-develop.html" target="_blank">Java和PHP在Web开发方面的比较</a><br>
 <a href="https://www.jianshu.com/p/90257a757884" target="_blank">Web开发技术选型之Java与PHP</a><br>
 <a href="https://insights.stackoverflow.com/survey/2017#technology-programming-languages" target="_blank">Most Popular Technologies</a><br>
-…</p><p>P.S. 我本人的话是不挑语言的，最擅长 Java，对 Go，Node.js 和 Python 比较感兴趣，PHP 也可以。</p></div>
+…</p><p>P.S. 吾辈是不挑语言的，最擅长 Java，对 Go，Node.js 和 Python 比较感兴趣，PHP 也可以。</p></div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
             <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-                <div class="toc"><ul class="nav"><li class=""><a href="#java-web-の-server-架构（ver-011）">Java Web の Server 架构（ver. 0.1.1）</a><ul class="nav"><li class=""><a href="#1-model">1. Model</a></li><li class=""><a href="#2-controller">2. Controller</a></li><li class=""><a href="#3-view">3. View</a><ul class="nav"><li class=""><a href="#11-后端模板方案（适合全栈）">1.1. 后端模板方案（适合全栈）</a></li><li class=""><a href="#12-前后端分离方案（小项目不推荐）">1.2. 前后端分离方案（小项目不推荐）</a></li></ul></li><li class=""><a href="#附录-1">附录 1</a></li><li class=""><a href="#附录-2">附录 2</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+                <div class="toc"><ul class="nav"><li class=""><a href="#java-web-の-server-架构（ver-011）">Java Web の Server 架构（ver. 0.1.1）</a><ul class="nav"><li><a href="#1-model">1. Model</a></li><li><a href="#2-controller">2. Controller</a></li><li><a href="#3-view">3. View</a><ul class="nav"><li><a href="#11-后端模板方案（适合全栈）">1.1. 后端模板方案（适合全栈）</a></li><li><a href="#12-前后端分离方案（小项目不推荐）">1.2. 前后端分离方案（小项目不推荐）</a></li></ul></li><li><a href="#附录-1">附录 1</a></li><li><a href="#附录-2">附录 2</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
             </ul>
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
-        <div class="toc"><ul class="nav"><li class=""><a href="#java-web-の-server-架构（ver-011）">Java Web の Server 架构（ver. 0.1.1）</a><ul class="nav"><li class=""><a href="#1-model">1. Model</a></li><li class=""><a href="#2-controller">2. Controller</a></li><li class=""><a href="#3-view">3. View</a><ul class="nav"><li class=""><a href="#11-后端模板方案（适合全栈）">1.1. 后端模板方案（适合全栈）</a></li><li class=""><a href="#12-前后端分离方案（小项目不推荐）">1.2. 前后端分离方案（小项目不推荐）</a></li></ul></li><li class=""><a href="#附录-1">附录 1</a></li><li class=""><a href="#附录-2">附录 2</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+        <div class="toc"><ul class="nav"><li class=""><a href="#java-web-の-server-架构（ver-011）">Java Web の Server 架构（ver. 0.1.1）</a><ul class="nav"><li><a href="#1-model">1. Model</a></li><li><a href="#2-controller">2. Controller</a></li><li><a href="#3-view">3. View</a><ul class="nav"><li><a href="#11-后端模板方案（适合全栈）">1.1. 后端模板方案（适合全栈）</a></li><li><a href="#12-前后端分离方案（小项目不推荐）">1.2. 前后端分离方案（小项目不推荐）</a></li></ul></li><li><a href="#附录-1">附录 1</a></li><li><a href="#附录-2">附录 2</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
